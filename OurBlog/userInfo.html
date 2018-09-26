@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<script src="js/jquery-3.3.1.js"></script>
+	
+
+	<!-- 附加导航，页面跳转 -->
+<script>
+    $(function(){
+        /*单机切换*/
+        $(".card-bar li").click(
+                function(){
+                    /*每个li下属的div*/
+                    var divShow = $(".content").children("span");
+                    /*利用selected进行判断*/
+                    if(!$(this).hasClass("basic-set")){
+                    /*li标签的顺序和div的顺序是对应的，获取索引*/
+                        var index = $(this).index();
+                        /*当前对象设置class属性*/
+                        $(this).addClass("basic-set");
+                       
+                        /*移除其他同级元素属性*/
+                        $(this).siblings().removeClass("basic-set");
+                       
+                        /*展示当前li对应的div内容,利用方法显示和隐藏*/
+                        $(divShow[index]).show();
+                        /*隐藏同级元素*/
+                        $(divShow[index]).siblings().hide();
+                    }
+                }
+        )
+    })
+	</script>
+
+<!-- 返回顶部按钮 -->
+	 <script type="text/javascript">
+    $(function(){
+         // 当滚动条滚动大于200时出现，未大于，消失
+         $(window).scroll(function(){
+           if($(document).scrollTop()<200){
+             // alert("kk");
+             $(".gotop").stop().animate({
+                
+                 opacity: 0
+                  
+             },1000)
+           }
+           else{
+             $(".gotop").show().stop().animate({
+                  
+                 opacity: 1
+                  
+             },1000)
+           }
+        })
+       // 返回顶部
+       $(".gotop").on("click",function(){
+           $('body,html').animate({scrollTop:0},1000);
+       });
+    });
+   </script>
+
+
+<!-- 删除文章弹窗 -->
+   <script>
+   		$(function(){
+   			$("#delete").click(function(){
+   				
+   				if(confirm("确认删除该文章？")){
+   					alert("删除成功")
+   				}
+   			})
+   		})
+   </script>
+<style>
+
+
+/*返回顶部样式*/
+   .gotop{
+       display: block;
+       width: 32px;
+       height: 32px;
+       background-color: red;
+       text-align: center;
+       text-decoration: none;
+       font-size: 14px;
+       font-weight: bold;
+       color: white;
+       line-height: 32px;
+       position: fixed;
+       right:50px;
+       bottom:50px; 
+       opacity: 0;
+       /*top: 500px;*/
+     }
+
+
+    </style>
+</head>
+<body>
+
+	<!-- 返回顶部 -->
+	<div class="wrap">
+       <a href="###" class="gotop">TOP</a>
+   </div>
+
+	<!-- 头部导航 -->
+	<div class="top-nav">
+		<div class="container clf">
+			<div class="fl">
+				<div class="logo"><img src="./images/logo.png" style="width: 50px;height: 50px;"></div>
+			</div>
+			<a href="index.html" class="item">首页</a>
+
+			<!-- 登录模块 -->
+			<div class="lr-msg fr item">
+				<a href="#" class="l-msg">登录</a>
+				<a href="#" class="r-msg">注册</a>
+			</div>
+
+			<!-- 搜索模块 -->
+			<div class="fr search-bar">
+				<input type="text" name="" placeholder="搜索"><button>搜索</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="person-info" >
+		<div class="container clf">
+			<div class="side-bar fl">
+
+				<!-- 个人用户小卡片 -->
+				<div class="card-info" id="2">
+					<div class="head-img">
+						<img src="images/logo.png" alt="">
+					</div>
+					<div class="user-id"><a href="#">jiw</a></div>
+					<ul class="tree-list">
+						<li><div class="item-tt">博文量</div>
+						<a href="#"><span class="item-num">0</span></a>
+						</li>
+						<li><div class="item-tt">访问量</div>
+						<a href="#"><span class="item-num">0</span></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- 左下部点击事件 -->
+				<div class="card-bar" >
+					<ul style="padding-left: 0;">
+					<li class="item basic-set icon ion-gear-a"><a>&nbsp  基本设置</a></li>
+					<li class="item icon ion-paper-airplane"><a>&nbsp 我的文章</a></li>
+					</ul>
+				</div>
+			</div>
+		<div class="content">
+
+			<!-- 右部基本设置详细信息 -->
+			<span>
+			<div class="info-body fr">
+				<ul class="all-art">
+					<li class="fl"><a href="" class="title ">基本设置</a></li>
+				</ul>
+				<div class="message fl" >
+					<div class="mod-avatar">
+						<img src="images/logo.png" alt="">
+						<a href=""><button class="mod-btn">修改头像</button></a>
+					</div>
+					<form action="">
+						<ul class="mod-msg" >
+							<li>
+								<div>
+									<span>e-mail</span><input type="text">
+								</div>
+							</li>
+								<li>
+								<div>
+									<span>e-mail</span><input type="text"> 
+								</div>
+							</li>
+							<li>
+								<div>
+									<span>用户名</span><input type="text">
+								</div>
+							</li>
+							<li>
+								<button class="mod-btn">保存</button>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			</span>
+
+			<!-- 右部我的文章详细信息 -->
+			<span style="display: none;" >
+			<div class="info-body fr" style="overflow:auto;"  >
+				<ul class="all-art clf">
+					<li class="fl"><a href="" class="title">全部文章</a></li>
+					<li class="fl"><a href="" class="title">我的原创</a></li>
+				</ul>
+				<div class="message  ">	
+					<ul class="list-items clf">
+					<li class="list-item ">
+						<span class="fr" style="position: absolute;top:0px;right: 10px;font-size: 20px;x" id="delete"><a href="#">×</a></span>
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+
+					<li class="list-item ">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<!-- <img src="#"> -->
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+							
+				</ul>
+				</div>
+			</div>
+			</span>
+		</div>
+		</div>
+	</div>
+
+
+	
+<!-- 页面尾部 -->
+	<div class="footer">
+    	<div class="container">
+        	<a href="#">联系我们</a>
+        	<a href="#">招聘信息</a>
+       	 	<a href="#">商家入驻</a>
+       	 	<a href="#">商家后台</a>
+      		<div>
+	            营业执照注册号：330106000004 | 网络文化经营许可证：浙网文（2016）0349-21号 | 增值电信业务经营许可证：B2-2011049 | 安全责任书 | 浙公网安备
+	            33010602009号
+       	 	</div>
+   	 	</div>
+	</div>
+</body>
+</html>

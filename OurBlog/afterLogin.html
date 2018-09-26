@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<!-- 适配不同浏览器，标准化全局样式 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css"> 
+	<!-- ionicons图标CDN -->
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>主页</title>
+	<!-- 轮播模块样式 -->
+	<link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+	<script  src="js/jquery-3.3.1.js"></script>
+	    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        ul.nav{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            
+            /*background: #bbb;*/
+        }
+        ul.nav li{
+            
+            height: 40px;
+            padding: 0 15px;
+            position: relative;
+        }
+
+
+        ul.mune {
+            width: 120px;
+            height: 100px;
+            position: absolute;
+            background: #FFFCFC;
+           	right: -10px;
+            top: 40px;
+            display: none;
+            font-size: 14px;
+            padding-left:  30px;
+            border: 1px solid #F6F6F6;
+            border-radius: 5%;
+        }
+        .menu{
+        	margin-top: 10px;
+        	display: block;
+        }
+
+        .gotop{
+       display: block;
+       width: 32px;
+       height: 32px;
+       background-color: red;
+       text-align: center;
+       text-decoration: none;
+       font-size: 14px;
+       font-weight: bold;
+       color: white;
+       line-height: 32px;
+       position: fixed;
+       right:50px;
+       bottom:50px; 
+       opacity: 0;
+       /*top: 500px;*/
+     }
+    </style>
+
+<!-- 个人中心悬浮面板 -->
+	<script>
+        $(function(){
+
+            $(".nav > li").hover(function () {
+                $(this).children().show();
+            }, function () {
+                $(".mune").hide(500);
+            });
+
+        });
+	</script>
+
+	<!-- 返回顶部 -->
+	<script type="text/javascript">
+	    $(function(){
+	         // 当滚动条滚动大于200时出现，未大于，消失
+	         $(window).scroll(function(){
+	           if($(document).scrollTop()<200){
+	             // alert("kk");
+	             $(".gotop").stop().animate({
+	                
+	                 opacity: 0
+	                  
+	             },1000)
+	           }
+	           else{
+	             $(".gotop").show().stop().animate({
+	                  
+	                 opacity: 1
+	                  
+	             },1000)
+	           }
+	        })
+	       
+	       $(".gotop").on("click",function(){
+	           $('body,html').animate({scrollTop:0},1000);
+	       });
+	    });
+   </script>
+
+</head>
+<body >
+
+<!-- 返回顶部 -->
+	<div class="wrap">
+       <a href="###" class="gotop">TOP</a>
+   </div>
+  
+	<!-- 头部导航栏 -->
+	<div class="top-nav">
+		<div class="container clf">
+			<div class="fl">
+				<div class="logo"><img src="./images/logo.png" style="width: 50px;height: 50px; max-width: 100%"></div>
+			</div>
+			<a href="index.html" class="item">首页</a>
+			<div class="lr-msg fr item" >
+				<ul class="nav">
+			        <li>Jiw
+			            <ul class="mune">
+			                <li><a href="userInfo.html">个人中心</a></li>
+					 		<li><a href="#">退出登录</a></li>
+			            </ul>
+			        </li>
+			   
+			    </ul>
+			</div>
+	<!-- 	 	<div id="after-login" style="display: none; margin-left: 880px;" >
+		 		<a href="#">个人中心</a>
+		 		<a href="#">退出登录</a>
+		 	</div> -->
+			<div class="fr search-bar">
+				<input type="text" name="" placeholder="搜索"><button>搜索</button>
+			</div>
+		</div>
+	</div>
+
+<!-- 博客内容区 -->
+	<div class="blog-main">
+		<div class="container clf">
+
+			<!-- 右部写博文 -->
+			<a href="writeBlog.html" ><button class="write-blog fr" >写博文</button></a>
+
+			<!-- 左部博客内容区 -->
+			<div class="content fl">
+
+				<!-- 分类 -->
+				<div class="menu" style="margin-top: 10px;">
+					<h3 style="text-align: center;">全部分类</h3>
+					<ul >
+						<li class="item " >
+							<a href="#" style="border-right: 3px solid #DFDBDB;padding-right: 55px;">生活</a><a href="#" style="padding-left: 55px;">科技</a>
+						</li>
+						<li class="item">
+							<a href="#" style="border-right: 3px solid #DFDBDB;padding-right: 55px;">情感</a><a href="#" style="padding-left: 55px;">健康</a>
+						</li>
+						<li class="item">
+							<a href="#" style="border-right: 3px solid #DFDBDB;padding-right: 55px;">美食</a><a href="#" style="padding-left: 55px;">其它</a>
+						</li>
+			
+					</ul>
+		
+				</div>
+				
+				<!-- 图片轮播 -->
+				<div class="slider">
+					<div id="wrapper">
+				        <div class="slider-wrapper theme-default">
+				            <div id="slider" class="nivoSlider">
+				                <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
+				                <a href="http://dev7studios.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
+				                <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
+				                <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
+				            </div>
+				            <div id="htmlcaption" class="nivo-html-caption">
+				                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+				            </div>
+				        </div>
+				        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
+				    </div>
+				    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+				    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+				    <script type="text/javascript">
+				    $(window).load(function() {
+				        $('#slider').nivoSlider();
+				    });
+				    </script>
+				   
+				</div>
+
+			<!-- 精华博文展示区 -->
+				<div class="pub-title">精华博文</div>
+				<ul class="list-items">
+					<li class="list-item">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse icon ion-eye" style="font-size: 14px;color: #A29C9C;">&nbsp 50</span>
+							<span class="pub-time fr" style="font-size: 14px;color: #A29C9C;">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+
+					<!-- 分页 -->
+					<li class="paging-items">
+						<a href="" class="paging">首页</a>
+						<a href="" class="paging">上一页</a>
+						<a href="" class="paging">1</a>
+						<a href="" class="paging">2</a>
+						<a href="" class="paging">3</a>
+						<a href="" class="paging">4</a>
+						<a href="" class="paging">5</a>
+						<a href="" class="paging">...</a>
+						<a href="" class="paging">下一页</a>
+						<a href="" class="paging">末页</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- 页面尾部 -->
+	<div class="footer">
+    	<div class="container">
+        	<a href="#">联系我们</a>
+        	<a href="#">招聘信息</a>
+       	 	<a href="#">商家入驻</a>
+       	 	<a href="#">商家后台</a>
+      		<div>
+	            营业执照注册号：330106000004 | 网络文化经营许可证：浙网文（2016）0349-21号 | 增值电信业务经营许可证：B2-2011049 | 安全责任书 | 浙公网安备
+	            33010602009号
+       	 	</div>
+   	 	</div>
+	</div>
+
+</body>
+</html>

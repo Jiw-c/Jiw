@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+ 	<link rel="stylesheet" href="css/loginRes.css">
+ 	<script src="js/jquery-3.3.1.js"></script>
+	<title>注册界面</title>
+
+	<!-- 注册信息验证 -->
+	<script>
+			$(document).ready(function(){
+				$(".inp-login").blur(function(){   //检测输入域焦点
+					var user = $(this).val();//得到用户名的文本框的值
+					var user_confirm = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;	
+					var user_last = $("div.user-tip");//获取文本框最后的位置
+					if(user==""){
+						user_last.text("用户名不能为空").removeClass("icon ion-checkmark-circled pass-tips").addClass("icon ion-close-circled error-tips");//在文本框后提示用户名不能为空
+
+					}else if(!user_confirm.exec(user)){
+						user_last.text("邮箱格式不正确").removeClass("icon ion-checkmark-circled pass-tips").addClass("icon ion-close-circled error-tips");
+					}else{
+						
+						user_last.text("通过").removeClass("icon ion-close-circled tips").addClass("icon ion-checkmark-circled pass-tips");
+						$(".inp-pwd").blur(function(){//如果密码失去焦点
+							var password = $(this).val();
+							var password_last = $("div.pwd-tip");
+							if(password==""){
+								password_last.text("密码不可为空").removeClass("icon ion-checkmark-circled pass-tips").addClass("icon ion-close-circled error-tips");
+							}else if(password.length<6||password.length>12){
+								password_last.text("密码长度在6-12位").removeClass("icon ion-checkmark-circled pass-tips").addClass("icon ion-close-circled error-tips");
+							}else{
+								password_last.text("").removeClass("icon ion-close-circled tips")
+								$("#confirm-pwd").blur(function(){
+									var password_confirm = $(this).val();
+									var password_confirm_last = $("div.confirm-tip");
+									if(password_confirm==""){
+										password_confirm_last.text("请再次输入密码").removeClass("icon ion-checkmark-circled pass-tips").addClass("icon ion-close-circled error-tips");
+									}else if(password_confirm != password){
+										password_confirm_last.text("两次密码不相同").removeClass("icon ion-checkmark-circled pass-tips").addClass("icon ion-close-circled error-tips");
+									}else{
+										password_confirm_last.text("两次密码相同").removeClass("icon ion-close-circled tips").addClass("icon ion-checkmark-circled pass-tips");	
+									}
+								});
+							}
+						});
+					}
+				});
+			});
+</script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="register-info">
+			<div class="ltitle"><a href="index.html"  class="entry"><img src="images/logo.png" style="width: 50px;height: 50px;"></a>注册
+								<a href="index.html"  class="entry1"><img src="images/logo.png" style="width: 50px;height: 50px;"></a>
+			</div>
+
+			<!-- 用户信息表单 -->
+			<form action="">
+				<div class="user">
+					<input type="text" name="username" class="inp-login" placeholder="用户名"><div class="user-tip"></div>
+					<input type="password" name="pwd" class="inp-pwd" placeholder="密码" ><div class="pwd-tip"></div>
+					<input type="password" name="pwd" class="inp-pwd " placeholder="确认密码" id="confirm-pwd"><div class="confirm-tip"></div>
+				</div>
+
+				<!-- 提交按钮 -->
+				<div class="lrbtn">
+					<input type="submit" name="login" class="lr-btn" value="注册">
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</body>
+</html>

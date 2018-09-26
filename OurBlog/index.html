@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>主页</title>
+	<link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+	<script  src="js/jquery-3.3.1.js"></script>
+
+
+</head>
+<body >
+
+	<!-- 头部导航栏 -->
+	<div class="top-nav">
+		<div class="container clf">
+			<div class="fl">
+				<div class="logo"><img src="./images/logo.png" style="width: 65px;height: 65px; max-width: 100%"></div>
+			</div>
+			<a href="index.html" class="item">首页</a>
+			<div class="lr-msg fr item" >
+				<a href="login.html" class="l-msg">登录</a>
+				<a href="register.html" class="r-msg">注册</a>
+			</div>
+	
+			<div class="fr search-bar">
+				<input type="text" name="" placeholder="搜索"><button>搜索</button>
+			</div>
+		</div>
+	</div>
+
+<!-- 博客内容区 -->
+	<div class="blog-main">
+		<div class="container clf">
+
+			<!-- 右部写博文 -->
+			<a href="writeBlog.html" ><button class="write-blog fr" >写博文</button></a>
+
+			<!-- 左部博客内容区 -->
+			<div class="content fl">
+				<div class="menu">
+					<h3 >全部分类</h3>
+					<ul>
+						<li class="item">
+							<a href="#">生活</a><a href="#">科技</a>
+						</li>
+						<li class="item">
+							<a href="#">情感</a><a href="#">健康</a>
+						</li>
+						<li class="item">
+							<a href="#">美食</a><a href="#">其它</a>
+						</li>
+			
+					</ul>
+		
+				</div>
+				
+				<!-- 图片轮播 -->
+				<div class="slider">
+					<div id="wrapper">
+				        <div class="slider-wrapper theme-default">
+				            <div id="slider" class="nivoSlider">
+				                <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
+				                <a href="http://dev7studios.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
+				                <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
+				                <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
+				            </div>
+				            <div id="htmlcaption" class="nivo-html-caption">
+				                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+				            </div>
+				        </div>
+				        <div class="footer-banner" style="width:728px; margin:0 auto"></div>
+				    </div>
+				    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+				    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+				    <script type="text/javascript">
+				    $(window).load(function() {
+				        $('#slider').nivoSlider();
+				    });
+				    </script>
+				   
+				</div>
+
+			<!-- 精华博文展示区 -->
+				<div class="pub-title">精华博文</div>
+				<ul class="list-items">
+					<li class="list-item">
+						<a href="entryArticle.html" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">50</span>
+							<span class="pub-time fr">2018-09-05 17:41</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>			<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>			<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>			<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>			<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>			<li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li><li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li><li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li><li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li><li class="list-item">
+						<a href="#" target="_black">
+							<p class="title">博客开发</p>
+						</a>
+						<p class="info">博客单条信息</p>
+						<div class="msg">
+							<span>
+								<img src="#">
+								<a href="#">作者</a>
+							</span>
+							<span>
+								<a href="#">类别</a>
+							</span>
+							<span class="icon-browse">浏览量</span>
+							<span class="pub-time fr">时间</span>
+						</div>
+					</li>
+					
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- 页面尾部 -->
+	<div class="footer">
+    	<div class="container">
+        	<a href="#">联系我们</a>
+        	<a href="#">招聘信息</a>
+       	 	<a href="#">商家入驻</a>
+       	 	<a href="#">商家后台</a>
+      		<div>
+	            营业执照注册号：330106000004 | 网络文化经营许可证：浙网文（2016）0349-21号 | 增值电信业务经营许可证：B2-2011049 | 安全责任书 | 浙公网安备
+	            33010602009号
+       	 	</div>
+   	 	</div>
+	</div>
+
+</body>
+</html>

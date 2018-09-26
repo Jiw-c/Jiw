@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<!-- 适配不同浏览器，标准化全局样式 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/normalize/8.0.0/normalize.min.css"> 
+	<!-- ionicons图标CDN -->
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>写博客</title>
+</head>
+<body>
+
+	<!-- 头部导航 -->
+	<div class="top-nav">
+		<div class="container clf">
+			<div class="fl">
+				<div class="logo"><img src="./images/logo.png" style="width: 50px;height: 50px;"></div>
+			</div>
+			<a href="index.html" class="item">首页</a>
+
+			<!-- 登录注册模块 -->
+			<div class="lr-msg fr item">
+				<a href="#" class="l-msg">登录</a>
+				<a href="#" class="r-msg">注册</a>
+			</div>
+
+			<!-- 搜索模块 -->
+			<div class="fr search-bar">
+				<input type="text" name="" placeholder="搜索"><button>搜索</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="person-info">
+		<div class="container clf">
+
+			<!-- 新建文章 -->
+				<div class="card-bar fl">
+					<div class="item1 icon ion-edit"><a href="#" style="padding-left: 25px;">新建文章</a></div>	
+				</div>
+			<div class="info-body fr">
+
+				<!-- 开始编写博客 -->
+				<div class="write-blog">
+					<div class="art-title">文章标题
+						<input type="text">
+					</div>
+					<div class="art-title">选择分类
+						<select name="" id="">
+							<option value="">生活</option>
+							<option value="">情感</option>
+							<option value="">美食</option>
+							<option value="">科技</option>
+							<option value="">健康</option>
+							<option value="">其它</option>
+						</select>
+					</div>
+					<br>
+
+					<!-- ueditor百度富文本编辑器插件 -->
+					<div class="ueditor">
+										    <!-- 加载编辑器的容器 -->
+					    <script id="container" name="content" type="text/plain">
+					        
+					    </script>
+					    <!-- 配置文件 -->
+					    <script type="text/javascript" src="ueditor-1.4.3.3/ueditor.config.js"></script>
+					    <!-- 编辑器源码文件 -->
+					    <script type="text/javascript" src="ueditor-1.4.3.3/ueditor.all.js"></script>
+					    <!-- 实例化编辑器 -->
+					    <script type="text/javascript">
+					        var ue = UE.getEditor('container',{
+						        toolbars: [
+						            ['fullscreen', 'source', 'undo', 'redo', '|', 'fontsize', '|', 'blockquote', 'horizontal', '|', 'removeformat', 'formatmatch', 'link', 'unlink', '}', 'simpleupload', 'insertimage', 'preview'],
+						            ['bold', 'italic', 'underline', 'forecolor', 'backcolor', '|', 'indent', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
+						                'rowspacingtop', 'rowspacingbottom', 'lineheight', '|', 'insertorderedlist', 'insertunorderedlist', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter']
+						        ]
+						        ,autoHeightEnabled: false
+						        ,autoFloatEnabled: true
+						        ,initialFrameWidth : 750//编辑器宽度，默认1000
+						        ,initialFrameHeight :340//编辑器高度，默认320
+						        ,maximumWords : 1000//最大字符数
+						    });
+					 	
+					    </script>
+					</div>
+
+					<!-- 发布按钮 -->
+					<div class="pub-btn">
+						<a><button class="fl mod-btn">立即发布</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 页面尾部 -->
+	<div class="footer">
+    	<div class="container ">
+        	<a href="#">联系我们</a>
+        	<a href="#">招聘信息</a>
+       	 	<a href="#">商家入驻</a>
+       	 	<a href="#">商家后台</a>
+      		<div>
+	            营业执照注册号：330106000004 | 网络文化经营许可证：浙网文（2016）0349-21号 | 增值电信业务经营许可证：B2-2011049 | 安全责任书 | 浙公网安备
+	            33010602009号
+       	 	</div>
+   	 	</div>
+	</div>
+</body>
+</html>

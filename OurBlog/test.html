@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>测试</title>
+        <!-- 导入jquery核心类库 -->
+        <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+       
+        <script>
+            //  // 元素选择器
+            // $(function(){
+            //     $("button").click(function(){
+            //         $("#").hide();
+            //     });
+            // });
+
+            //  // id 选择器
+            //  $(function(){
+            //     $("button").click(function(){
+            //         $("#test").hide();
+            //     });
+            //  });
+
+            //  // class 选择器
+            //  $(function(){
+            //     $("button").click($function(){
+            //         $(".test").hide();
+            //     });
+            //  });
+
+            //  // 选取所有元素
+            //  $(function(){
+            //     $("button").click(function(){
+            //         $("*").hide();
+            //     });
+            //  });
+
+             // //选取当前html元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $(this).hide();
+             //    });
+             // });
+
+             // // 选取class为intro的<p>元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("p.intro").hide();
+             //    });
+             // });
+
+             // // 选取第一个<p>元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("p:first").hide();
+             //    });
+             // });
+
+             // // 选取第一个<ul>元素的第一个<li>元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("ul li:first").hide();
+             //    });
+             // });
+
+             // //选取每个<ul>元素的第一个<li>元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("ul li:first-child").hide()
+             //    });
+             // });
+
+             // //选取带有href属性的元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("[href]").hide();
+             //    });
+             // });
+
+             // //选取所有target属性值等于“_blank”的<a>元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("a[target='_blank']").hide()
+             //    });
+             // });
+
+             // //选取所有target属性值不等于“_blank”的<a>元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $("a[target!='_blank']").hide()
+             //    });
+             // });
+
+             // //选取所有 type="button" 的 <input> 元素 和 <button> 元素
+             // $(function(){
+             //    $("button").click(function(){
+             //        $(":button").hide();
+             //    });
+             // });
+
+             // // 选取偶数位置的 <tr> 元素
+             // $(function(){
+             //    $("tr:even").css("background" ,"yellow");
+             // });
+
+            // // 选取偶数位置的 <tr> 元素
+            //  $(function(){
+            //     $("tr:odd").css("background" ,"yellow");
+            //  });
+
+
+
+        </script>
+        <script>
+    $(function() {
+        $("li:has(ul)").hover(function() {
+            $(this).find("a:first").css("background-color","#eee");
+              $(this).find(".nav2").css("display","block");             
+        },function() {
+        $(this).find("a:first").css("background-color","#fff");
+              $(this).find(".nav2").css("display","none"); 
+         });    
+    });
+</script>
+    </head>
+    <body>
+        <p>List 1:</p>
+            <ul>
+              <li>Coffee</li>
+              <li>Milk</li>
+              <li>Tea</li>
+            </ul>
+
+            <p>List 2:</p>
+            <ul>
+              <li>Coffee</li>
+              <li>Milk</li>
+              <li>Tea</li>
+            </ul>
+
+            <p><a href="http://www.runoob.com/html/" target="_blank">HTML 教程</a></p>
+            <p><a href="http://www.runoob.com/css/">CSS 教程</a></p>
+            <input type="button" name="" value="测试"><p>
+            <button>点我</button>
+
+            <h1>欢迎访问我的主页</h1>
+
+        <table border="1">
+        <tr>
+          <th>网站名</th>
+          <th>网址</th>
+        </tr>
+        <tr>
+        <td>Google</td>
+        <td>http://www.google.com</td>
+        </tr>
+        <tr>
+        <td>Baidu</td>
+        <td>http://www.baidu.com</td>
+        </tr>
+        <tr>
+        <td>菜鸟教程</td>
+        <td>http://www.runoob.com</td>
+        </tr>
+        <tr>
+        <td>淘宝</td>
+        <td>http://www.taobao.com</td>
+        </tr>
+        <tr>
+        <td>Facebook</td>
+        <td>http://www.facebook.com</td>
+        </tr>
+        </table>
+   
+
+<ul id="nav">   
+    <li><a>首页</a></li>
+    <li><a>新闻中心</a>
+        <ul class="nav2">   
+        <li><a>国内新闻</a></li>
+        <li><a>国外新闻</a></li>
+
+        </ul>
+     </li>
+
+     <li><a>产品中心</a>
+        <ul class="nav2">   
+        <li><a>优惠产品</a></li>
+        <li><a>团购产品</a></li>      
+        </ul>
+     </li>  
+
+     <li><a>联系我们</a></li>  
+
+</ul>
+
+    </body>
+</html> 
