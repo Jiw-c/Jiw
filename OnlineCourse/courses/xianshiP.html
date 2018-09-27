@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>导航栏</title>
+
+  	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div>
+<ul id="myTab" class="nav nav-tabs">
+	<li class="active">
+		<a href="#none" data-toggle="tab">相关视频教程</a>
+	</li>
+	
+</ul>
+</div>
+
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="home">
+  
+
+	<div class="row clearfix panel panel-default">
+		<div class="col-md-3 column panel-heading ">
+		<p>
+		   <img src="../images/unity.jpg"><p>
+		   <a href="iFrame.html" target = "iFrame.html" >  Unity3D游戏开发公开课视频教程</a>
+		   	</p>
+		</div><p>
+			
+			
+		   <div class="col-md-3 column panel-heading">
+		 <p>	  
+		   <img src="../images/2D.jpg"><p>
+		   <a href="#" >  Cocos2D游戏开发公开课视频教程</a>		     
+			</div>	
+		   <div class="col-md-3 column panel-heading">
+		 <p>	  
+		   <img src="../images/Design.jpg"><p>
+		   <a href="#" >  设计模式公开课视频教程</a>		     
+			</div>
+		   <div class="col-md-3 column panel-heading">
+		 <p>	  
+		   <img src="../images/Hadoop.jpg"><p>
+		   <a href="#" >  Hadoop实战公开课视频教程</a>		     
+			 </div>
+			
+		 
+		
+	<script>
+	$(function () {
+		$('#myTab li:eq(0) a').tab('show');
+	});
+</script>
+</body>
+</html>
